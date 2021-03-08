@@ -34,9 +34,9 @@
 #include "hal_gpio.h"
 
 /*- Definitions -------------------------------------------------------------*/
-HAL_GPIO_PIN(SWCLK_TCK,    A, 14)
-HAL_GPIO_PIN(SWDIO_TMS,    A, 15)
-HAL_GPIO_PIN(nRESET,       A, 9)
+HAL_GPIO_PIN(SWCLK_TCK,    A, 3)
+HAL_GPIO_PIN(SWDIO_TMS,    A, 2)
+HAL_GPIO_PIN(nRESET,       A, 7)
 
 #define DAP_CONFIG_ENABLE_SWD
 //#define DAP_CONFIG_ENABLE_JTAG
@@ -49,8 +49,8 @@ HAL_GPIO_PIN(nRESET,       A, 9)
 
 // Set the value to NULL if you want to disable a string
 // DAP_CONFIG_PRODUCT_STR must contain "CMSIS-DAP" to be compatible with the standard
-#define DAP_CONFIG_VENDOR_STR          "Alex Taradov"
-#define DAP_CONFIG_PRODUCT_STR         "Generic CMSIS-DAP Adapter"
+#define DAP_CONFIG_VENDOR_STR          "Arduino"
+#define DAP_CONFIG_PRODUCT_STR         "Nicla Sense CMSIS-DAP Adapter"
 #define DAP_CONFIG_SER_NUM_STR         usb_serial_number
 #define DAP_CONFIG_FW_VER_STR          "v1.0"
 #define DAP_CONFIG_DEVICE_VENDOR_STR   NULL

@@ -45,8 +45,9 @@
 #define UART_WAIT_TIMEOUT      10 // ms
 #define STATUS_TIMEOUT         250 // ms
 
-HAL_GPIO_PIN(VCP_STATUS,       A, 2);
-HAL_GPIO_PIN(DAP_STATUS,       A, 4);
+HAL_GPIO_PIN(VCP_STATUS,       A, 10);
+HAL_GPIO_PIN(DAP_STATUS,       A, 11);
+HAL_GPIO_PIN(OUTPUT_EN,       A, 4);
 
 /*- Variables ---------------------------------------------------------------*/
 static alignas(4) uint8_t app_request_buffer[DAP_CONFIG_PACKET_SIZE];
@@ -301,6 +302,9 @@ int main(void)
 
   HAL_GPIO_DAP_STATUS_out();
   HAL_GPIO_DAP_STATUS_set();
+
+  HAL_GPIO_OUTPUT_EN_out();
+  HAL_GPIO_OUTPUT_EN_set();
 
   while (1)
   {
