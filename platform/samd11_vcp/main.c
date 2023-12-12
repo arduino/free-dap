@@ -47,7 +47,7 @@
 
 HAL_GPIO_PIN(VCP_STATUS,       A, 10);
 HAL_GPIO_PIN(DAP_STATUS,       A, 11);
-HAL_GPIO_PIN(OUTPUT_EN,       A, 4);
+HAL_GPIO_PIN(OUTPUT_EN,       A, 7);
 
 /*- Variables ---------------------------------------------------------------*/
 static alignas(4) uint8_t app_request_buffer[DAP_CONFIG_PACKET_SIZE];

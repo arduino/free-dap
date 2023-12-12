@@ -43,7 +43,7 @@ const alignas(4) usb_device_descriptor_t usb_device_descriptor =
   .bDeviceProtocol    = USB_DEVICE_PROTOCOL_INTERFACE_ASSOCIATION,
   .bMaxPacketSize0    = 64,
   .idVendor           = 0x2341,
-  .idProduct          = 0x0060,
+  .idProduct          = 0x0072,
   .bcdDevice          = 0x0101,
   .iManufacturer      = USB_STR_MANUFACTURER,
   .iProduct           = USB_STR_PRODUCT,
@@ -242,7 +242,7 @@ char usb_serial_number[16];
 const char *usb_strings[] =
 {
   [USB_STR_MANUFACTURER]  = "Arduino",
-  [USB_STR_PRODUCT]       = "Nicla Sense CMSIS-DAP",
+  [USB_STR_PRODUCT]       = "Nano Matter CMSIS-DAP",
   [USB_STR_COM_PORT]      = "Virtual COM-Port",
   [USB_STR_CMSIS_DAP]     = "CMSIS-DAP Adapter",
   [USB_STR_SERIAL_NUMBER] = usb_serial_number,

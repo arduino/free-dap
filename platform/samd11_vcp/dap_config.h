@@ -36,7 +36,7 @@
 /*- Definitions -------------------------------------------------------------*/
 HAL_GPIO_PIN(SWCLK_TCK,    A, 3)
 HAL_GPIO_PIN(SWDIO_TMS,    A, 2)
-HAL_GPIO_PIN(nRESET,       A, 7)
+HAL_GPIO_PIN(nRESET,       A, 4)
 
 #define DAP_CONFIG_ENABLE_SWD
 //#define DAP_CONFIG_ENABLE_JTAG
@@ -50,7 +50,7 @@ HAL_GPIO_PIN(nRESET,       A, 7)
 // Set the value to NULL if you want to disable a string
 // DAP_CONFIG_PRODUCT_STR must contain "CMSIS-DAP" to be compatible with the standard
 #define DAP_CONFIG_VENDOR_STR          "Arduino"
-#define DAP_CONFIG_PRODUCT_STR         "Nicla Sense CMSIS-DAP Adapter"
+#define DAP_CONFIG_PRODUCT_STR         "Nano Matter CMSIS-DAP Adapter"
 #define DAP_CONFIG_SER_NUM_STR         usb_serial_number
 #define DAP_CONFIG_FW_VER_STR          "v1.0"
 #define DAP_CONFIG_DEVICE_VENDOR_STR   NULL
@@ -97,7 +97,7 @@ static inline void DAP_CONFIG_nTRST_write(int value)
 //-----------------------------------------------------------------------------
 static inline void DAP_CONFIG_nRESET_write(int value)
 {
-  HAL_GPIO_nRESET_write(value);
+  HAL_GPIO_nRESET_write(!!!value);
 }
 
 //-----------------------------------------------------------------------------
@@ -133,7 +133,7 @@ static inline int DAP_CONFIG_nTRST_read(void)
 //-----------------------------------------------------------------------------
 static inline int DAP_CONFIG_nRESET_read(void)
 {
-  return HAL_GPIO_nRESET_read();
+  return !HAL_GPIO_nRESET_read();
 }
 
 //-----------------------------------------------------------------------------
@@ -188,7 +188,7 @@ static inline void DAP_CONFIG_CONNECT_SWD(void)
   HAL_GPIO_SWCLK_TCK_set();
 
   HAL_GPIO_nRESET_out();
-  HAL_GPIO_nRESET_set();
+  HAL_GPIO_nRESET_clr();
 }
 
 //-----------------------------------------------------------------------------
@@ -201,7 +201,7 @@ static inline void DAP_CONFIG_CONNECT_JTAG(void)
   HAL_GPIO_SWCLK_TCK_set();
 
   HAL_GPIO_nRESET_out();
-  HAL_GPIO_nRESET_set();
+  HAL_GPIO_nRESET_clr();
 }
 
 //-----------------------------------------------------------------------------
