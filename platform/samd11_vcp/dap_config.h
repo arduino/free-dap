@@ -42,7 +42,7 @@ HAL_GPIO_PIN(nRESET,       A, 4)
 //#define DAP_CONFIG_ENABLE_JTAG
 
 #define DAP_CONFIG_DEFAULT_PORT        DAP_PORT_SWD
-#define DAP_CONFIG_DEFAULT_CLOCK       1000000 // Hz
+#define DAP_CONFIG_DEFAULT_CLOCK       20000000 // Hz
 
 #define DAP_CONFIG_PACKET_SIZE         64
 #define DAP_CONFIG_PACKET_COUNT        1
@@ -63,7 +63,7 @@ HAL_GPIO_PIN(nRESET,       A, 4)
 
 // A threshold for switching to fast clock (no added delays)
 // This is the frequency produced by dap_clock_test(1) on the SWCLK pin 
-#define DAP_CONFIG_FAST_CLOCK          2200000 // Hz
+#define DAP_CONFIG_FAST_CLOCK          20000 // Hz
 
 /*- Prototypes --------------------------------------------------------------*/
 extern char usb_serial_number[16];
